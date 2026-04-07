@@ -11,7 +11,7 @@ const UsersListPage: React.FC = () => {
 
   return (
     <div>
-      <h1>All users</h1>
+      <h1 className="font-bold mb-5 text-2xl">All users</h1>
       <UsersList users={users} />
     </div>
   );

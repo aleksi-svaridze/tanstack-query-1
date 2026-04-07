@@ -6,7 +6,7 @@ import Home from "../pages/Home.page";
 
 const AppRouter: React.FC = () => {
   return (
-    <div>
+    <div className="container mx-auto px-5">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/all-users" element={<UsersListPage />} />
