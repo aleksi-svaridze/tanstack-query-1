@@ -8,26 +8,12 @@ const SingleUserPage: React.FC = () => {
   const params = useParams();
   const { data, error, isLoading } = useFetchSingleUser(Number(params.id));
 
-  const {
-    id,
-    name,
-    username,
-    email,
-    phone,
-    website,
-    company: { bs, catchPhrase, name: somename },
-    address: {
-      city,
-      suite,
-      zipcode,
-      street,
-      geo: { lat, lng },
-    },
-  } = data || ({} as IUser);
+  const { id, name, username, email, phone, website } = data || ({} as IUser);
 
   if (error) return <h3>error.message</h3>;
 
   if (isLoading) return <div>Loading..</div>;
+
   return (
     <div>
       <SingleUser
@@ -37,15 +23,6 @@ const SingleUserPage: React.FC = () => {
         email={email}
         phone={phone}
         website={website}
-        bs={bs}
-        catchPhrase={catchPhrase}
-        somename={somename}
-        suite={suite}
-        zipcode={zipcode}
-        street={street}
-        lat={lat}
-        lng={lng}
-        city={city}
       />
     </div>
   );
